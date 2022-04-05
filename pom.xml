@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>itclub-common</module>
+        <module>itclub-framework</module>
+        <module>itclub-main</module>
+        <module>itclub-model</module>
+    </modules>
+
+    <groupId>com.itclub</groupId>
+    <artifactId>itclub</artifactId>
+    <version>1.0.0</version>
+
+    <name>itclub</name>
+    <description>专注移动端的快速开发框架</description>
+
+    <!-- 依赖版本 -->
+    <properties>
+        <itclub.version>1.0.0</itclub.version>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <druid-version>1.2.8</druid-version>
+        <mybatis-plus-version>3.5.1</mybatis-plus-version>
+        <fastjson-version>1.2.79</fastjson-version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <commons.fileupload.version>1.4</commons.fileupload.version>
+        <alibaba.oss.version>3.10.2</alibaba.oss.version>
+        <jwt.version>0.9.1</jwt.version>
+    </properties>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot的依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- mybatis-plus 驱动 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
+
+            <!-- druid连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-version}</version>
+            </dependency>
+
+
+            <!-- 解析器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson-version}</version>
+            </dependency>
+
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
+
+            <!-- 核心模块-->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- 通用模块-->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-common</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- Token生成与解析-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+
+            <!-- 入口模块-->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-main</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- 入口模块-->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-model</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!--项目开发者列表 -->
+    <developers>
+        <!--itclub项目开发者的信息 -->
+        <developer>
+            <!--项目开发者的代号 -->
+            <name>onePiece</name>
+            <!--项目开发者的博客的URL -->
+            <url>https://www.cnblogs.com/cool-fun/</url>
+            <!--项目开发者在项目中扮演的角色，角色元素描述了各种角色 -->
+            <roles>
+                <role>Project Master</role>
+            </roles>
+        </developer>
+    </developers>
+</project>
