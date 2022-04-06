@@ -1,4 +1,7 @@
-# 数据源配置
+#数据库校验公钥
+public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALbmfacusf0WZI6zlgdW2s5Xw7SCn8yfKGErb1uD/v/XcT0yYgrLPaAEnU912VxkFFkyR/7BNtpb603DW89/qU8CAwEAAQ==
+
+# 数据源配置,数据库加密
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -8,7 +11,7 @@ spring:
       master:
         url: jdbc:mysql://localhost:3306/itclub?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
         username: root
-        password: 123456
+        password: PjpJNBlqaNhw+c1JXtaOmoT6qwP2Z79+vx5sWP6JfRbbDeCwF1Or00m8gjmLzAQu0Vok/lYZL+DZ0Fb2Z+4sPA==
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
@@ -35,6 +38,7 @@ spring:
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
+      connectProperties: config.decrypt=true;config.decrypt.key=${public-key}
       webStatFilter:
         enabled: true
       statViewServlet:
@@ -43,9 +47,12 @@ spring:
         allow:
         url-pattern: /druid/*
         # 控制台管理用户名和密码
-        login-username: ruoyi
-        login-password: 123456
+        login-username:
+        login-password:
       filter:
+        config:
+          # 是否配置加密
+          enabled: true
         stat:
           enabled: true
           # 慢SQL记录

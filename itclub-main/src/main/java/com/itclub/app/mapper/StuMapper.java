@@ -12,10 +12,9 @@ import java.util.List;
  *
  *  @author Monkey D. Luffy
  */
-@DataSource(value = DataSourceType.SLAVE)
 public interface StuMapper extends BaseMapper<Student> {
 
-    @Select("select * from stu1")
+    @Select("select * from stu")
     public List<Student> searchAllByCreat();
 
 }

@@ -1,6 +1,5 @@
 package com.itclub.model.local;
 
-import com.itclub.common.annotation.DataSource;
 import com.itclub.common.config.ItClubConfig;
 import com.itclub.common.core.domain.AjaxResult;
 import com.itclub.common.utils.StringUtils;

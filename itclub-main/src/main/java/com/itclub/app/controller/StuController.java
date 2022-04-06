@@ -26,17 +26,10 @@ public class StuController {
     @Autowired
     private StuService stuService;
 
-    @Autowired
-    private StuMapper stuMapper;
-
     @GetMapping("/hello")
     public String hello(){
         return "welcome";
     }
 
-    @DataSource(value = DataSourceType.SLAVE)
-    public Student list(){
-        return stuMapper.selectById(1l);
-    }
 
 }

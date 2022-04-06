@@ -4,7 +4,6 @@ import com.itclub.app.domain.Student;
 import com.itclub.app.mapper.StuMapper;
 import com.itclub.common.annotation.DataSource;
 import com.itclub.common.enums.DataSourceType;
-import com.itclub.framework.datasource.DynamicDataSourceContextHolder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,13 +19,10 @@ class ItClubApplicationTests {
     private StuMapper stuMapper;
 
     @Test
-    @DataSource(value = DataSourceType.SLAVE)
+//    @DataSource(value = DataSourceType.SLAVE) //测试切换数据源
     void testInsert() {
-//        DynamicDataSourceContextHolder.setDataSourceType(DataSourceType.SLAVE.name());
         List<Student> userList = stuMapper.searchAllByCreat();
         System.out.println(userList);
-//        DynamicDataSourceContextHolder.clearDataSourceType();
-
     }
 
 }
