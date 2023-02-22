@@ -1,0 +1,3 @@
+com.itclub.rabbitmq.config.DirectRabbitConfig
+com.itclub.rabbitmq.config.FanoutRabbitConfig
+com.itclub.rabbitmq.config.TopicRabbitConfig

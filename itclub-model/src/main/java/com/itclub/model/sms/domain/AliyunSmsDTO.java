@@ -2,15 +2,12 @@ package com.itclub.model.sms.domain;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-
 /**
- * 阿里云短信服务响应体
+ * 功能描述
  *
- * @author xinfeng
- * @since 1.0.0
+ * @author: onePiece
  */
-public class SendSmsResponse implements Serializable {
+public class AliyunSmsDTO {
 
     @SerializedName("BizId")
     private String bizId;

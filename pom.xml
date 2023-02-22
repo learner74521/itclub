@@ -8,27 +8,38 @@
         <module>itclub-framework</module>
         <module>itclub-main</module>
         <module>itclub-model</module>
+        <module>itclub-data</module>
+        <module>itclub-system</module>
     </modules>
 
     <groupId>com.itclub</groupId>
     <artifactId>itclub</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <name>itclub</name>
     <description>专注移动端的快速开发框架</description>
 
     <!-- 依赖版本 -->
     <properties>
-        <itclub.version>1.0.0</itclub.version>
+        <itclub.version>1.1.0</itclub.version>
+        <spring.boot.version>2.7.1</spring.boot.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <druid-version>1.2.8</druid-version>
-        <mybatis-plus-version>3.5.1</mybatis-plus-version>
-        <fastjson-version>1.2.79</fastjson-version>
+        <druid.version>1.2.8</druid.version>
+        <mybatis.plus.version>3.5.1</mybatis.plus.version>
+        <mybatis.plus.generator.version>3.5.1</mybatis.plus.generator.version>
+        <fastjson.version>1.2.79</fastjson.version>
+        <velocity.version>2.3</velocity.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons.fileupload.version>1.4</commons.fileupload.version>
-        <alibaba.oss.version>3.10.2</alibaba.oss.version>
+        <aliyun.oss.version>3.10.2</aliyun.oss.version>
+        <aliyun.sms.version>2.0.9</aliyun.sms.version>
+        <fastjson.version>2.0.9</fastjson.version>
+        <aliyun.sms.openapi.version>0.2.2</aliyun.sms.openapi.version>
         <jwt.version>0.9.1</jwt.version>
+        <hutool.version>5.8.0.M2</hutool.version>
+        <lombok.version>1.18.24</lombok.version>
+        <activiti.version>7.1.0.M5</activiti.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -38,7 +49,16 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.5.8</version>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--  hutool工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,22 +67,35 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus-version}</version>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus 代码生成 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.generator.version}</version>
             </dependency>
 
             <!-- druid连接池 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid-version}</version>
+                <version>${druid.version}</version>
             </dependency>
 
-
-            <!-- 解析器 -->
+            <!-- fastjson序列化 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>${fastjson-version}</version>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- velocity模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
             </dependency>
 
             <!-- io常用工具类 -->
@@ -72,6 +105,25 @@
                 <version>${commons.io.version}</version>
             </dependency>
 
+            <!-- 阿里云oss -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.oss.version}</version>
+            </dependency>
+
+            <!-- 阿里云sms -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>tea-openapi</artifactId>
+                <version>${aliyun.sms.openapi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>dysmsapi20170525</artifactId>
+                <version>${aliyun.sms.version}</version>
+            </dependency>
+
             <!-- 文件上传工具类 -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
@@ -79,40 +131,97 @@
                 <version>${commons.fileupload.version}</version>
             </dependency>
 
-            <!-- 核心模块-->
-            <dependency>
-                <groupId>com.itclub</groupId>
-                <artifactId>itclub-framework</artifactId>
-                <version>${itclub.version}</version>
-            </dependency>
-
-            <!-- 通用模块-->
-            <dependency>
-                <groupId>com.itclub</groupId>
-                <artifactId>itclub-common</artifactId>
-                <version>${itclub.version}</version>
-            </dependency>
-
-            <!-- Token生成与解析-->
+            <!-- Token生成与解析 -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- 入口模块-->
+            <!-- 核心模块 -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- 通用模块 -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-common</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- 模板模块 -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-model</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- 入口模块 -->
             <dependency>
                 <groupId>com.itclub</groupId>
                 <artifactId>itclub-main</artifactId>
                 <version>${itclub.version}</version>
             </dependency>
 
-            <!-- 入口模块-->
+            <!-- data-redis -->
             <dependency>
                 <groupId>com.itclub</groupId>
-                <artifactId>itclub-model</artifactId>
-                <version>1.0.0</version>
+                <artifactId>itclub-data-redis</artifactId>
+                <version>${itclub.version}</version>
             </dependency>
+
+            <!-- data-elasticsearch -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-data-elasticsearch</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- data-kafka -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-data-kafka</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- data-rabbitmq -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-data-rabbitmq</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- system-activiti -->
+<!--            <dependency>-->
+<!--                <groupId>com.itclub</groupId>-->
+<!--                <artifactId>itclub-system-activiti</artifactId>-->
+<!--                <version>${itclub.version}</version>-->
+<!--            </dependency>-->
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- JSON 解析器和生成器 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 工作流activiti -->
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-spring-boot-starter</artifactId>
+                <version>${activiti.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
@@ -167,7 +276,7 @@
             <url>https://www.cnblogs.com/cool-fun/</url>
             <!--项目开发者在项目中扮演的角色，角色元素描述了各种角色 -->
             <roles>
-                <role>Project Master</role>
+                <role>Project Developer</role>
             </roles>
         </developer>
     </developers>

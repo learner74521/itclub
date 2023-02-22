@@ -1,0 +1,14 @@
+aliyun:
+  sms:
+    # API鉴权，访问身份验证中用到用户标识
+    accessKeyId: LTAI5tSL8gkV2YUHqkpt9e9v
+    # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    accessKeySecret: u4XFhPWK5sb2wHGeChUfQ8syPAHlCY
+    # 指定的短信服务地址，无需更改
+    endpoint: dysmsapi.aliyuncs.com
+    # 短信签名，需要在阿里云申请获取
+    signName: 艾塔云科技网站
+    # 短信模板code，需要在阿里云申请获取
+    templateCode: SMS_239325998
+    #生成验证码的个数，支持6位：SIX，4位：FOUR
+    codeCount: SIX

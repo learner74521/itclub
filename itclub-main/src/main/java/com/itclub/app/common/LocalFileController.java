@@ -1,4 +1,4 @@
-package com.itclub.model.local;
+package com.itclub.app.common;
 
 import com.itclub.common.config.ItClubConfig;
 import com.itclub.common.core.domain.AjaxResult;
@@ -33,6 +33,34 @@ public class LocalFileController
     @Autowired
     private ServerConfig serverConfig;
 
+
+    /**
+     * 通用上传请求
+     */
+    @PostMapping("/local/upload")
+    public AjaxResult uploadFile(MultipartFile file) throws Exception
+    {
+        System.out.println(file.getOriginalFilename());
+        System.out.println(file.getName());
+        System.out.println(file.getResource().getFile());
+        try
+        {
+            // 上传文件路径
+            String filePath = ItClubConfig.getUploadPath();
+            // 上传并返回新文件名称
+            String fileName = FileUploadUtils.upload(filePath, file);
+            String url = serverConfig.getUrl() + fileName;
+            AjaxResult ajax = AjaxResult.success();
+            ajax.put("fileName", fileName);
+            ajax.put("url", url);
+            return ajax;
+        }
+        catch (Exception e)
+        {
+            return AjaxResult.error(e.getMessage());
+        }
+    }
+
     /**
      * 通用下载请求
      *
@@ -62,30 +90,6 @@ public class LocalFileController
         catch (Exception e)
         {
             log.error("下载文件失败", e);
-        }
-    }
-
-    /**
-     * 通用上传请求
-     */
-    @PostMapping("/local/upload")
-    public AjaxResult uploadFile(MultipartFile file) throws Exception
-    {
-        try
-        {
-            // 上传文件路径
-            String filePath = ItClubConfig.getUploadPath();
-            // 上传并返回新文件名称
-            String fileName = FileUploadUtils.upload(filePath, file);
-            String url = serverConfig.getUrl() + fileName;
-            AjaxResult ajax = AjaxResult.success();
-            ajax.put("fileName", fileName);
-            ajax.put("url", url);
-            return ajax;
-        }
-        catch (Exception e)
-        {
-            return AjaxResult.error(e.getMessage());
         }
     }
 

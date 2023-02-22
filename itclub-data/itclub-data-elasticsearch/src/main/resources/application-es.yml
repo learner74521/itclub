@@ -1,0 +1,9 @@
+spring:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+  elasticsearch:
+    connection-timeout: 5s
+    socket-timeout: 30s
+    uris: 127.0.0.1:9200

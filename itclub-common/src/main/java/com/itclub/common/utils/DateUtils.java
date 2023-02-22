@@ -1,6 +1,6 @@
 package com.itclub.common.utils;
 
-import org.apache.commons.lang3.time.DateFormatUtils;
+import cn.hutool.core.date.DateUtil;
 
 import java.lang.management.ManagementFactory;
 import java.text.ParseException;
@@ -92,7 +92,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
     public static final String datePath()
     {
         Date now = new Date();
-        return DateFormatUtils.format(now, "yyyy/MM/dd");
+        return DateUtil.format(now, "yyyy/MM/dd");
     }
 
     /**
@@ -101,7 +101,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
     public static final String dateTime()
     {
         Date now = new Date();
-        return DateFormatUtils.format(now, "yyyyMMdd");
+        return DateUtil.format(now, "yyyyMMdd");
     }
 
     /**

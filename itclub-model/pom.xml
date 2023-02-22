@@ -13,6 +13,13 @@
 
     <dependencies>
 
+        <!-- configuration-processor-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- 通用模块-->
         <dependency>
             <groupId>com.itclub</groupId>
@@ -29,7 +36,16 @@
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
-            <version>${alibaba.oss.version}</version>
+        </dependency>
+
+        <!-- 阿里云sms -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>tea-openapi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>dysmsapi20170525</artifactId>
         </dependency>
 
     </dependencies>

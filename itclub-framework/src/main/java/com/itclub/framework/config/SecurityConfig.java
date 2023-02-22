@@ -2,32 +2,34 @@ package com.itclub.framework.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
 /**
  * spring security配置
  * 
  * @author onePiece
  */
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter
+public class SecurityConfig
 {
-    
+
+
     /**
-     * 解决 无法直接注入 AuthenticationManager
-     *
+     * 用于开发者测试
      * @return
-     * @throws Exception
      */
     @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception
-    {
-        return super.authenticationManagerBean();
+    UserDetailsService userDetailsService() {
+        InMemoryUserDetailsManager users = new InMemoryUserDetailsManager();
+        users.createUser(User.withUsername("admin").password("{noop}123456").roles("admin").build());
+        return users;
     }
 
     /**
@@ -45,17 +47,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
      * rememberMe          |   允许通过remember-me登录的用户访问
      * authenticated       |   用户登录后可访问
      */
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception
-    {
-        httpSecurity
-                // CSRF禁用，因为不使用session
-                .csrf().disable()
-                // 基于token，所以不需要session
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                // 过滤请求
-                .authorizeRequests()
-                // 对于登录login 注册register 验证码captchaImage 允许匿名访问
+    @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
                 .antMatchers("/login", "/register", "/captchaImage").anonymous()
                 .antMatchers(
                         HttpMethod.GET,
@@ -68,6 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 ).permitAll()
                 .antMatchers("/swagger-ui.html").anonymous()
                 .antMatchers("/app/**").anonymous()
+                .antMatchers("/demo/**").anonymous()
                 .antMatchers("/model/**").anonymous()
                 .antMatchers("/swagger-resources/**").anonymous()
                 .antMatchers("/webjars/**").anonymous()
@@ -76,7 +71,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated()
                 .and()
-                .headers().frameOptions().disable();
+                // 基于token，所以不需要session
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                // 过滤请求
+                .authorizeRequests()
+                // 对于登录login 注册register 验证码captchaImage 允许匿名访问
+                .and()
+                .headers().frameOptions().disable()
+                .and()
+                // CSRF禁用，因为不使用session
+                .csrf().disable();
+        return http.build();
     }
 
     /**

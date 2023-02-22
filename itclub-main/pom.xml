@@ -5,7 +5,7 @@
     <parent>
         <artifactId>itclub</artifactId>
         <groupId>com.itclub</groupId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
@@ -13,31 +13,60 @@
 
     <dependencies>
 
-        <!-- Mysql驱动包 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <!-- 核心模块-->
+        <!-- 核心模块 -->
         <dependency>
             <groupId>com.itclub</groupId>
             <artifactId>itclub-framework</artifactId>
         </dependency>
 
-        <!-- 通用模块-->
+        <!-- 模板模块 -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-model</artifactId>
+        </dependency>
+
+        <!-- 通用模块 -->
         <dependency>
             <groupId>com.itclub</groupId>
             <artifactId>itclub-common</artifactId>
         </dependency>
 
-        <!--测试工具-->
+        <!-- data-redis -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-data-redis</artifactId>
+        </dependency>
+
+        <!-- data-elasticsearch -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-data-elasticsearch</artifactId>
+        </dependency>
+
+        <!-- data-kafka -->
+<!--        <dependency>-->
+<!--            <groupId>com.itclub</groupId>-->
+<!--            <artifactId>itclub-data-kafka</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- data-rabbitmq -->
+<!--        <dependency>-->
+<!--            <groupId>com.itclub</groupId>-->
+<!--            <artifactId>itclub-data-rabbitmq</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- system-activiti -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-system-activiti</artifactId>
+        </dependency>
+
+        <!--测试工具 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

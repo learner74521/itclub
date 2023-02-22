@@ -1,0 +1,20 @@
+aliyun:
+  oss:
+    # API鉴权，访问身份验证中用到用户标识
+    access-key-id: LTAI5tSL8gkV2YUHqkpt9e9v
+    # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    access-key-secret: u4XFhPWK5sb2wHGeChUfQ8syPAHlCY
+    # oss访问域名（内网）
+    endpoint: oss-cn-beijing.aliyuncs.com
+    # 域名前缀,用于预览地址拼接
+    dns: http：//www.itClub.com
+    # oss的存储空间
+    bucket-name: itclub
+    #文件路径 如：example 或者 example/img
+    file-path: example
+    #防止文件命名冲突 支持 uuid或timestamp两种方式，推荐uuid
+    file-name: uuid
+    # url有效期(S)
+    policy-expire: 300
+    # 上传文件大小(M)
+    max-size: 10

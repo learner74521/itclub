@@ -2,6 +2,7 @@ package com.itclub.framework.config.properties;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -45,8 +46,8 @@ public class DruidProperties
     @Value("${spring.datasource.druid.testOnReturn}")
     private boolean testOnReturn;
 
-    @Value("${spring.datasource.druid.connectProperties}")
-    private String connectProperties;
+//    @Value("${spring.datasource.druid.connectProperties}")
+//    private String connectProperties;
 
     public DruidDataSource dataSource(DruidDataSource datasource)
     {
@@ -77,7 +78,7 @@ public class DruidProperties
         datasource.setTestOnReturn(testOnReturn);
 
         /** 为数据库密码提供加密功能 */
-        datasource.setConnectionProperties(connectProperties);
+//        datasource.setConnectionProperties(connectProperties);
         return datasource;
     }
 }
