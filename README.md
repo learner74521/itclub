@@ -1,100 +1,78 @@
-itclub快速开发框架(v1.0.0)
+itclub集成专题（v1.1.0）<font style="color:green" >开发中</font>
 
-专注为移动端，前端分离版服务
+> 为程序员指引明路的超级助手
 
-前言：
+## 一句话简介
 
-精简版若依框架，新增一些使用工具，更加方便上手，利于学弟们学习和比赛使用。精简版无后台管理，代码生成，定时任务等模块，但并不代表这些模块被丢弃，整合上即可使用。为大部分初学springboot的同学考虑，能够更加专注于crud的开发流程，决定将上述模块剥离。
+一款超好用的百宝箱，让工具赋予思想，为业务提供方案。
 
-**(以下加粗字体还没完成部分)**
+## 模块划分
 
-改动：
+```
+itclub 后端                  （版本管理）                 开发进度
+- 
+itclub-common                     通用模块                    重构中
+  日志打印，xss
+itclub-framework                  核心模块                    重构中
+  多数据源，分库分表，过滤器，拦截器
+itclub-main                       启动模块                    重构中    
+  -app                            开发演示
+  -demo                           使用演示
+itclub-model                      拓展模块             
+  --   
+  --gen                           代码生成                     20%
+  --sms                           验证码                       80%
+  --oss                           云存储                      100%
+  --pay                           支付                         0%
 
-1. mybatis升级为mybatis-plus
-2. 新增Lombok，提高开发效率
-3. 摒弃swagger，推荐apifox前后端共同编辑
-4. **采用mybatis-puls实现分页，数据库加密，代码生成，摒弃原框架多方集成的jar包**
-5. **新增业务模型模块：阿里云oss云存储，短信服务，支付服务功能**
-6. 新增工具类
-7. .....
-
-优势：
-
-1. demo典例，快速掌握开发流程
-
-2. 企业级规范，建立好的开发习惯
-
-3. 配置完备，方便学习配置
-
-4. 模块化开发，拓展方便
-
-5. 业务模型下每个功能独立，不用可移除，真正实现代码低耦合
-
-
-
-springboot多模块框架（itclub）
-
-1. 核心模块（itclub-framework）
-
-   支持多数据源配置
-
-   安全框架配置
-
-   日志打印配置
-
-   监控配置
-
-2. 通用模块（itclub-common）
-
-   工具类：
-
-   1. 异常类
-   2. 用户密码加密
-   3. 数据密码加密
-   4. 日期工具
-   5. 校验规则类
-   6. 字符串工具
-   7. 响应封装类
-   8. 过滤器
-   9. xss防护
-   10. ,,,,,,
-
-3. 常用业务模型模块（itclub-model）可移除，此模块部分功能没有实现，会尽快上线敬请期待！
-
-   1. 上传下载（兼容本地/阿里云oss）
-   2. **阿里云短信服务**
-   3. **支付服务**
-
-4. 移动端模块（itclub-main）（总启动类）
-
-   1. demo案列
-   2. 打包路径
+  
+itclub-system                     系统模块            
+  --
+  --web                           web入口                     待开发
+  --sys                           系统管理                     待开发
+  --oa                            办公系统                     待开发
+  --cas                           单点登录                     待开发
+  --permission                    权限控制                     待开发
+  --monitor                       监控管理                     待开发
+  --quartz                        任务调度                     待开发
+  
+itclub-data                       数据模块                      
+  --
+  --itclub-data-redis             redis缓存                    90%      
+  --itclub-data-mongodb           nosql                       开发中
+  --itclub-data-elasticsearch     搜索引擎                      90%           
+  --itclub-data-rabbitmq          消息队列                      100%
+  --itclub-data-kafka             消息队列                      90%
+  --itclub-data-rocketmq          消息队列                      开发中
+  
+  
+itclub web
+选型 vue3+elementui
+暂未进行设计
+```
 
 
 
-学习文档（入门的还在百度，你已经会看官方文档了）
+### itclub-data
 
-[阿里云oss参考](https://help.aliyun.com/document_detail/31883.html)
+#### itclub-data-redis
 
-[mybatis-plus参考](https://baomidou.com/)
+​	lua脚本保证数据一致性方案
 
-[mybatis3参考](https://mybatis.org/mybatis-3/zh/getting-started.html)
+​    击穿问题解决方案，布隆过滤器
 
+@cacheable 添加过期时间规则
 
+#### itclub-data-rabbitmq
 
-下载
+三种订阅模式案例
 
-[apifox下载]()
+​	延迟队列，死信队列案例
 
+​	消息接收手动确认案例
 
+​    应用场景分析
 
-测试：
+#### itclub-data-elasticsearch
 
-测试切换数据源（测试完成）
-
-**测试上传下载功能本地+oss**
-
-**测试xss**
-
-**测试配置文件值能否获取**
-
+​    滚动翻页工具
