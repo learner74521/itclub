@@ -31,6 +31,18 @@
             <artifactId>itclub-common</artifactId>
         </dependency>
 
+        <!-- framework-datasource多数据源 -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-framework-datasource</artifactId>
+        </dependency>
+
+        <!-- framework-mybatisplus -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-framework-mybatisplus</artifactId>
+        </dependency>
+
         <!-- data-redis -->
         <dependency>
             <groupId>com.itclub</groupId>
@@ -50,10 +62,10 @@
 <!--        </dependency>-->
 
         <!-- data-rabbitmq -->
-<!--        <dependency>-->
-<!--            <groupId>com.itclub</groupId>-->
-<!--            <artifactId>itclub-data-rabbitmq</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-data-rabbitmq</artifactId>
+        </dependency>
 
         <!-- system-activiti -->
         <dependency>

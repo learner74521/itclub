@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
+/**
+ * @author onePiece
+ */
 @Data
 @TableName("stu")
 public class Student {

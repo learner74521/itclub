@@ -10,9 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>itclub-framework</artifactId>
+    <packaging>pom</packaging>
     <description>
         核心配置模块
     </description>
+    <modules>
+        <module>itclub-framework-sharding</module>
+        <module>itclub-framework-datasource</module>
+        <module>itclub-framework-mybatisplus</module>
+        <module>itclub-framework-security</module>
+    </modules>
 
     <dependencies>
         <!-- SpringBoot Web容器 -->

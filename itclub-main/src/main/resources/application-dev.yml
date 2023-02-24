@@ -1,57 +1,20 @@
-# 数据源配置
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.cj.jdbc.Driver
-    druid:
-      # 主库数据源
-      master:
-        url: jdbc:mysql://localhost:3306/itclub?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-        username: root
-        password: 123456
-      # 从库数据源
-      slave:
-        # 从数据源开关/默认关闭
-        enabled: false
-        url:
-        username:
-        password:
-      # 初始连接数
-      initialSize: 5
-      # 最小连接池数量
-      minIdle: 10
-      # 最大连接池数量
-      maxActive: 20
-      # 配置获取连接等待超时的时间
-      maxWait: 60000
-      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      timeBetweenEvictionRunsMillis: 60000
-      # 配置一个连接在池中最小生存的时间，单位是毫秒
-      minEvictableIdleTimeMillis: 300000
-      # 配置一个连接在池中最大生存的时间，单位是毫秒
-      maxEvictableIdleTimeMillis: 900000
-      # 配置检测连接是否有效
-      validationQuery: SELECT 1 FROM DUAL
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      webStatFilter:
-        enabled: true
-      statViewServlet:
-        enabled: true
-        # 设置白名单，不填则允许所有访问
-        allow:
-        url-pattern: /druid/*
-        # 控制台管理用户名和密码
-        login-username: ruoyi
-        login-password: 123456
-      filter:
-        stat:
-          enabled: true
-          # 慢SQL记录
-          log-slow-sql: true
-          slow-sql-millis: 1000
-          merge-sql: true
-        wall:
-          config:
-            multi-statement-allow: true
+    dynamic:
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAONKPOx0X27R3kYR2U8JtNjbi0HVB/aeuckrEjdzTvlUA3emqKiH1WyJokmUfW1m/w9eDIneNDm/YpF8+zdbFsMCAwEAAQ==
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      lazy: true #默认false非懒启动，系统加载到数据源立即初始化连接池
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/itclub?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+          username: root
+          password: 123456
+        slave:
+          url: jdbc:mysql://localhost:3306/itclub1?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+          username: root
+          password: 123456
+        slave_2:
+          url: ENC(B0F2lXMSepnU7NQJ3H8aOB9mlzHhXs2OtX6isTusDGHkdJ/65zdApTHhgffOupZZr2OElU2nyCwhwHCRzBgPTg==)?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8 # 内置加密,使用请查看详细文档
+          username: ENC(e+MyGNDcocrTEsGdxRNZI5wPZNmkh8I43gBC/MiJMSFJWe4AbrVfezio/s2iCXpv67QESqhF91PVbBvZ8PTI3A==)
+          password: ENC(htdfctJheMFjXpCRShy432F+sXkdBCrNHvoWgrdlUxOgo0G+8Dx+nqbG4EdVwW1GemQHA+Yq6otdBEfG0Cn3EA==)

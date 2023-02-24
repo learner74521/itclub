@@ -26,8 +26,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <druid.version>1.2.8</druid.version>
-        <mybatis.plus.version>3.5.1</mybatis.plus.version>
-        <mybatis.plus.generator.version>3.5.1</mybatis.plus.generator.version>
+        <mybatis.plus.version>3.5.3</mybatis.plus.version>
+        <mybatis.plus.generator.version>3.5.3</mybatis.plus.generator.version>
         <fastjson.version>1.2.79</fastjson.version>
         <velocity.version>2.3</velocity.version>
         <commons.io.version>2.11.0</commons.io.version>
@@ -39,7 +39,8 @@
         <jwt.version>0.9.1</jwt.version>
         <hutool.version>5.8.0.M2</hutool.version>
         <lombok.version>1.18.24</lombok.version>
-        <activiti.version>7.1.0.M5</activiti.version>
+        <activiti.version>7.0.0.Beta2</activiti.version>
+        <dynamic.datasource.version>3.6.0</dynamic.datasource.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -82,6 +83,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+
+            <!-- Dynamic DataSource -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.datasource.version}</version>
             </dependency>
 
             <!-- fastjson序列化 -->
@@ -166,6 +174,20 @@
                 <version>${itclub.version}</version>
             </dependency>
 
+           <!-- framework-datasource多数据源 -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework-datasource</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
+            <!-- framework-mybatisplus -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework-mybatisplus</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
             <!-- data-redis -->
             <dependency>
                 <groupId>com.itclub</groupId>
@@ -195,11 +217,11 @@
             </dependency>
 
             <!-- system-activiti -->
-<!--            <dependency>-->
-<!--                <groupId>com.itclub</groupId>-->
-<!--                <artifactId>itclub-system-activiti</artifactId>-->
-<!--                <version>${itclub.version}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-system-activiti</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
 
             <!-- lombok -->
             <dependency>
@@ -221,7 +243,12 @@
                 <artifactId>activiti-spring-boot-starter</artifactId>
                 <version>${activiti.version}</version>
             </dependency>
-
+            <!-- 生成流程图 -->
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-image-generator</artifactId>
+                <version>${activiti.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>

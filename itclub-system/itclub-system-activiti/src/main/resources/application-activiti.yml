@@ -19,3 +19,5 @@ spring:
     #process-definition-location-suffixes: #流程文件格式
     #  - **.bpmn20.xml
     #  - **.bpmn
+  main:
+    allow-bean-definition-overriding: true

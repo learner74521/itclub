@@ -10,7 +10,6 @@ itclub:
   profile: D:/itclub/uploadPath
 
 
-
 server:
   port: 8080
   servlet:
@@ -31,7 +30,7 @@ server:
 spring:
   profiles:
     # 添加多个配置文件用,隔开 如：dev,oss
-    active: dev,oss,redis,rabbitmq
+    active: dev,activiti
   # 文件上传
   servlet:
     multipart:
