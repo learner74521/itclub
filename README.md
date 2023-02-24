@@ -9,32 +9,39 @@ itclub集成专题（v1.1.0）<font style="color:green" >开发中</font>
 ## 模块划分
 
 ```
-itclub 后端                  （版本管理）                 开发进度
+itclub 后端                      （模板简介）                  开发进度
 - 
 itclub-common                     通用模块                    重构中
   日志打印，xss
+
 itclub-framework                  核心模块                    重构中
-  多数据源，分库分表，过滤器，拦截器
-itclub-main                       启动模块                    重构中    
+  --
+  --itclub-framework-datasource   多数据源
+  --itclub-framework-mybatisplus  数据操作
+  --itclub-framework-security     安全框架
+  --itclub-framework-sharding     分库分表       
+
+itclub-main                       启动模块                    重构中   
+  -- 
   -app                            开发演示
   -demo                           使用演示
+
 itclub-model                      拓展模块             
   --   
-  --gen                           代码生成                     20%
-  --sms                           验证码                       80%
-  --oss                           云存储                      100%
-  --pay                           支付                         0%
+  --itclub-model-gen              代码生成                     20%
+  --itclub-model-sms              验证码                       80%
+  --itclub-model-oss              云存储                      100%
+  --itclub-model-pay              支付                         0%
 
-  
 itclub-system                     系统模块            
   --
-  --web                           web入口                     待开发
-  --sys                           系统管理                     待开发
-  --oa                            办公系统                     待开发
-  --cas                           单点登录                     待开发
-  --permission                    权限控制                     待开发
-  --monitor                       监控管理                     待开发
-  --quartz                        任务调度                     待开发
+  --itclub-system-web             web入口                     待开发
+  --itclub-system-sys             系统管理                     待开发
+  --itclub-system-oa              办公系统                     待开发
+  --itclub-system-cas             单点登录                     待开发
+  --itclub-system-permission      权限控制                     待开发
+  --itclub-system-monitor         监控管理                     待开发
+  --itclub-system-quartz          任务调度                     待开发
   
 itclub-data                       数据模块                      
   --
