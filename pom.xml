@@ -216,10 +216,10 @@
                 <version>${itclub.version}</version>
             </dependency>
 
-            <!-- system-activiti -->
+            <!-- data-activiti -->
             <dependency>
                 <groupId>com.itclub</groupId>
-                <artifactId>itclub-system-activiti</artifactId>
+                <artifactId>itclub-data-rabbitmq</artifactId>
                 <version>${itclub.version}</version>
             </dependency>
 

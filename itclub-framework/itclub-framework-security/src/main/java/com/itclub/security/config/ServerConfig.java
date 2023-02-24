@@ -1,4 +1,4 @@
-package com.itclub.framework.config;
+package com.itclub.security.config;
 
 import com.itclub.common.utils.ServletUtils;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.itclub.framework.config;
+package com.itclub.security.config;
 
 import com.itclub.common.config.ItClubConfig;
 import com.itclub.common.constant.Constants;
@@ -18,8 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer
 {
-//    @Autowired
-//    private RepeatSubmitInterceptor repeatSubmitInterceptor;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry)
@@ -33,14 +31,6 @@ public class ResourcesConfig implements WebMvcConfigurer
                 .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/");
     }
 
-    /**
-     * 自定义拦截规则
-     */
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry)
-//    {
-//        registry.addInterceptor(repeatSubmitInterceptor).addPathPatterns("/**");
-//    }
 
     /**
      * 跨域配置

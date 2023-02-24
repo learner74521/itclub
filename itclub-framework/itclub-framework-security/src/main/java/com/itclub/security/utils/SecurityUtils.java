@@ -1,4 +1,4 @@
-package com.itclub.common.utils;
+package com.itclub.security.utils;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

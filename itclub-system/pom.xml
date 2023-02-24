@@ -11,9 +11,6 @@
 
     <artifactId>itclub-system</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>itclub-system-activiti</module>
-    </modules>
 
     <dependencies>
 

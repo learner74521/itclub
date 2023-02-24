@@ -1,4 +1,4 @@
-package com.itclub.framework.config;
+package com.itclub.config;
 
 
 import org.mybatis.spring.annotation.MapperScan;

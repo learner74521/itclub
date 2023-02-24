@@ -67,10 +67,11 @@
             <artifactId>itclub-data-rabbitmq</artifactId>
         </dependency>
 
-        <!-- system-activiti -->
+        <!-- data-activiti -->
         <dependency>
             <groupId>com.itclub</groupId>
-            <artifactId>itclub-system-activiti</artifactId>
+            <artifactId>itclub-data-rabbitmq</artifactId>
+            <version>${itclub.version}</version>
         </dependency>
 
         <!--测试工具 -->

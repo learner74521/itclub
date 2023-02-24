@@ -1,4 +1,4 @@
-package com.itclub.framework.config;
+package com.itclub.security.config;
 
 import com.itclub.common.filter.RepeatableFilter;
 import com.itclub.common.filter.XssFilter;

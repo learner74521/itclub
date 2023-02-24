@@ -19,6 +19,7 @@
         <module>itclub-data-mongodb</module>
         <module>itclub-data-rabbitmq</module>
         <module>itclub-data-rocketmq</module>
+        <module>itclub-data-activiti</module>
     </modules>
 
     <dependencies>
