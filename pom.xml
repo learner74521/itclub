@@ -188,6 +188,13 @@
                 <version>${itclub.version}</version>
             </dependency>
 
+            <!-- framework-security -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework-security</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
             <!-- data-redis -->
             <dependency>
                 <groupId>com.itclub</groupId>
@@ -219,7 +226,7 @@
             <!-- data-activiti -->
             <dependency>
                 <groupId>com.itclub</groupId>
-                <artifactId>itclub-data-rabbitmq</artifactId>
+                <artifactId>itclub-data-activiti</artifactId>
                 <version>${itclub.version}</version>
             </dependency>
 

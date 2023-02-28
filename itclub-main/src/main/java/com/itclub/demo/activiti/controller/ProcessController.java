@@ -142,7 +142,6 @@ public class ProcessController {
             System.out.println(task.getTaskDefinitionKey());
             System.out.println(task.getExecutionId());
         }
-
         return AjaxResult.success();
     }
 

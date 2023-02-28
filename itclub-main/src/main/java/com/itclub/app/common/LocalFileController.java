@@ -5,7 +5,7 @@ import com.itclub.common.core.domain.AjaxResult;
 import com.itclub.common.utils.StringUtils;
 import com.itclub.common.utils.file.FileUploadUtils;
 import com.itclub.common.utils.file.FileUtils;
-import com.itclub.framework.config.ServerConfig;
+import com.itclub.security.config.ServerConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -19,12 +19,12 @@ import java.time.format.DateTimeFormatter;
 public class TtlReceiver {
 
 //    @RabbitListener(queues = "QA")
-    public void xa(Message message) throws Exception {
+//    public void xa(Message message) throws Exception {
 //        String nowDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 //        byte[] body = message.getBody();
 //        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(body));
 //        System.out.println("QA队列消费: 当前时间" + nowDate + ois.readObject().toString());
-    }
+//    }
 
     @RabbitListener(queues = "QD")
     public void xb(Message message) throws Exception {

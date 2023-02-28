@@ -43,6 +43,12 @@
             <artifactId>itclub-framework-mybatisplus</artifactId>
         </dependency>
 
+        <!-- framework-security -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-framework-security</artifactId>
+        </dependency>
+
         <!-- data-redis -->
         <dependency>
             <groupId>com.itclub</groupId>
@@ -70,8 +76,7 @@
         <!-- data-activiti -->
         <dependency>
             <groupId>com.itclub</groupId>
-            <artifactId>itclub-data-rabbitmq</artifactId>
-            <version>${itclub.version}</version>
+            <artifactId>itclub-data-activiti</artifactId>
         </dependency>
 
         <!--测试工具 -->

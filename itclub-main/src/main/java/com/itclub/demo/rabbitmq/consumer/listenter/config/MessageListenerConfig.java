@@ -2,7 +2,7 @@ package com.itclub.demo.rabbitmq.consumer.listenter.config;
 
 
 
-import com.itclub.demo.rabbitmq.consumer.listenter.MyAckReceiver;
+import com.itclub.demo.rabbitmq.consumer.listenter.AckReceiver;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
@@ -21,7 +21,7 @@ public class MessageListenerConfig {
     @Autowired
     private CachingConnectionFactory connectionFactory;
     @Autowired
-    private MyAckReceiver myAckReceiver;
+    private AckReceiver ackReceiver;
 
     @Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
@@ -39,7 +39,7 @@ public class MessageListenerConfig {
         //container.setQueues(new Queue("DirectQueue",true));
         //container.addQueues(new Queue("DirectQueue2",true));
         //container.addQueues(new Queue("DirectQueue3",true));
-        container.setMessageListener(myAckReceiver);
+        container.setMessageListener(ackReceiver);
         return container;
     }
 

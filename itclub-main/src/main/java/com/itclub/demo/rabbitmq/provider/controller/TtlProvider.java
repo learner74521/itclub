@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 延迟队列
+ * 延迟队列-生产端
  *
  * @author: onePiece
  * @date: 2023-02-21
@@ -46,6 +46,5 @@ public class TtlProvider {
         }
         return AjaxResult.success();
     }
-
 
 }
