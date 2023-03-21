@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("demo")
 public class EsDemoController {
 
-    @Autowired
-    private ElasticsearchRestTemplate esService;
+//    @Autowired
+//    private ElasticsearchRestTemplate esService;
 
     @GetMapping("es")
     public AjaxResult getEs(){

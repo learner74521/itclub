@@ -40,6 +40,7 @@
         <hutool.version>5.8.0.M2</hutool.version>
         <lombok.version>1.18.24</lombok.version>
         <activiti.version>7.0.0.Beta2</activiti.version>
+        <sharding.jdbc.version>4.1.1</sharding.jdbc.version>
         <dynamic.datasource.version>3.6.0</dynamic.datasource.version>
     </properties>
 
@@ -181,6 +182,13 @@
                 <version>${itclub.version}</version>
             </dependency>
 
+            <!-- framework-sharding分表 -->
+            <dependency>
+                <groupId>com.itclub</groupId>
+                <artifactId>itclub-framework-sharding</artifactId>
+                <version>${itclub.version}</version>
+            </dependency>
+
             <!-- framework-mybatisplus -->
             <dependency>
                 <groupId>com.itclub</groupId>
@@ -242,6 +250,18 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- sharding-jdbc -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding.jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-namespace</artifactId>
+                <version>${sharding.jdbc.version}</version>
             </dependency>
 
             <!-- 工作流activiti -->

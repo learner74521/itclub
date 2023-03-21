@@ -30,7 +30,7 @@ server:
 spring:
   profiles:
     # 添加多个配置文件用,隔开 如：dev,oss
-    active: dev,activiti
+    active: sharding,activiti
   # 文件上传
   servlet:
     multipart:

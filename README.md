@@ -11,17 +11,17 @@ itclub集成专题（v1.1.0）<font style="color:green" >开发中</font>
 ```
 itclub 后端                      （模板简介）                  开发进度
 - 
-itclub-common                     通用工具模块                 100%
- 
+itclub-common                     通用模块                    60%
+  全局异常，基类，工具
 itclub-framework                  框架核心模块                 开发中
   --
-  --itclub-framework-datasource   多数据源
-  --itclub-framework-mybatisplus  数据操作
-  --itclub-framework-security     安全框架
-  --itclub-framework-sharding     数据分表 （二选一）
+  --itclub-framework-datasource   多数据源                     100%
+  --itclub-framework-mybatisplus  数据操作                     100%
+  --itclub-framework-security     安全框架                     100%
+  --itclub-framework-sharding     数据分表 （二选一）            100%     
   --itclub-framework-mycat        数据分表 （二选一）
   --itclub-framework-log          日志打印 
-  --itclub-framework-swagger      规范工具   
+  --itclub-framework-swagger      规范工具                  
 
 itclub-main                       项目启动模块                 开发中   
   -- 

@@ -15,11 +15,12 @@ import java.util.List;
  * @author onePiece
  */
 @Data
-@TableName("stu")
-public class Student {
+@TableName("shop")
+public class Shop {
 
-    @TableId(type = IdType.AUTO)
-    private Long id;
-    private String name;
-    private String sex;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long shopId;
+    private String shopName;
+    private String shopPrice;
+    private String shopType;
 }

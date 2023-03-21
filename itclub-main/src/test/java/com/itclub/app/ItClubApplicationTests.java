@@ -1,26 +1,25 @@
 package com.itclub.app;
 
-import com.itclub.app.domain.Student;
-import com.itclub.app.mapper.StuMapper;
+import com.itclub.app.domain.Shop;
+//import com.itclub.app.mapper.ShopMapper;
 
+import lombok.RequiredArgsConstructor;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngines;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@RunWith(SpringRunner.class)springboot2.2版本以前
 @SpringBootTest
+@RequiredArgsConstructor
 class ItClubApplicationTests {
 
-    @Autowired
-    private StuMapper stuMapper;
+//    private final ShopMapper shopMapper;
 
     @Test
 //    @DataSource(value = DataSourceType.SLAVE) //测试切换数据源
     void testInsert() {
-        Student userList = stuMapper.selectById("1");
-        System.out.println(userList);
+//        Shop list = shopMapper.selectById("1");
+//        System.out.println(list);
     }
 
     @Test

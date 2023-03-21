@@ -37,6 +37,12 @@
             <artifactId>itclub-framework-datasource</artifactId>
         </dependency>
 
+        <!-- framework-sharding分表 -->
+        <dependency>
+            <groupId>com.itclub</groupId>
+            <artifactId>itclub-framework-sharding</artifactId>
+        </dependency>
+
         <!-- framework-mybatisplus -->
         <dependency>
             <groupId>com.itclub</groupId>

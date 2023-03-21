@@ -10,13 +10,11 @@ import com.baomidou.dynamic.datasource.toolkit.CryptoUtils;
  */
 public class EncryptDemo {
 
-//    public static void main(String[] args) throws Exception {
-//        String password = "123456";
-//        //使用默认的publicKey ，建议还是使用下面的自定义
-//        String encodePassword = CryptoUtils.encrypt(password);
-//        System.out.println(encodePassword);
-//    }
-
+    /**
+     * 加密
+     * @param args
+     * @throws Exception
+     */
     //自定义publicKey
     public static void main(String[] args) throws Exception {
         String[] arr = CryptoUtils.genKeyPair(512);
